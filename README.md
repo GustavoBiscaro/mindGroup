@@ -40,8 +40,8 @@ Sequelize is a powerful Node.Js ORM (Object-Relational Mapping) library, created
 <quote>A library to help you hash passwords.</quote>
 
 <ul>
-    <li><strong>What is Password Hashing?</strong>Password Hashing is a process of converting an input password into a fixed-length string of characters, typically for the purpose of securely storing and transmitting the password.</li>
-    <li><strong>What is bcrypt?</strong>bcrypt is a type of cryptographic algorithm used to securely store passwords. It scrambles a user's password into a unique code. This way, even if a thief takes the database, they won't be able to recover the original passwords readily.</li>
+    <li><strong>What is Password Hashing? </strong>Password Hashing is a process of converting an input password into a fixed-length string of characters, typically for the purpose of securely storing and transmitting the password.</li>
+    <li><strong>What is bcrypt? </strong>bcrypt is a type of cryptographic algorithm used to securely store passwords. It scrambles a user's password into a unique code. This way, even if a thief takes the database, they won't be able to recover the original passwords readily.</li>
 </ul>
 
 #### How Does Bcrypt work?
