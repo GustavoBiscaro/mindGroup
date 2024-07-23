@@ -1,4 +1,7 @@
 const User = require('../MODELS/User')
+const bcrypt = require('bcrypt')
+
+const createUserToken = require('../HELPERS/create-user-token.js') //
 
 module.exports = class UserController {
     static async register(req, res) {
@@ -28,23 +31,44 @@ module.exports = class UserController {
 
         if (password !== confirmpassword) {
             res.status(422).json({
-                message: "the password doesn't match",
-            })
+                message: "the password doesn't match" })
             return
         }
 
         // check if user exists
-        const userExists = await User.findOne({ email: email})
+        const userExists = await User.findOne({ 
+            where: {
+            email: email
+            }
+        });
 
         if(userExists) {
-            res.status(422).json({
-                message: "Please, use a different email address, this email already exists",
+            res
+                .status(422)
+                .json({
+                message: 'Please, use a different email address, this email already exists',
             })
             return
         }
 
-        
+        // create a password
+        const salt = await bcrypt.genSalt(12);
+        const passwordHash = await bcrypt.hash(password, salt);
 
+        // create a user
+        const user = new User({
+            name,
+            email, 
+            phone,
+            password: passwordHash,
+        });
 
+        try {
+            const newUser = await user.save();
+
+            await createUserToken(newUser, req, res)
+        }catch(error) {
+            res.status(500).json({ message: error})
+        }
     }
-}
+};
