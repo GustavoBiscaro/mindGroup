@@ -15,7 +15,7 @@ async function main() {
         console.log('Connected to MySQL!');
 
         // Sync all defined models to the database
-        // await sequelize.sync();
+        await sequelize.sync();
         // console.log('All models were synchronized successfully.');
     } catch (error) {
         console.error('Unable to connect to MySQL:', error);
