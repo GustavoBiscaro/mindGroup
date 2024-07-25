@@ -48,3 +48,12 @@ Sequelize is a powerful Node.Js ORM (Object-Relational Mapping) library, created
 * <b>Hashing: </b>Bcrypt processes a user's password using a sophisticated mathematical function. This function converts the password to a fixed-length string of characters that appear random and meaningless. The hashed value is what is kept in the database, not the original password. Because the hashing function is one-way, reversing the hash will not produce the original password.
 
 * <b>Salting: </b>Salting: To improve security, bcrypt incorporates a random number called a salt. This salt is unique to each password and is attached to it before hashing. The combined value (password + salt) is then passed to the hashing function.
+
+# HOW RUN THIS PROJECT?
+## Client Side
+cd client
+npm start
+
+## Server Side
+cd server
+npm run runDev
