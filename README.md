@@ -75,7 +75,7 @@ Source code often contains non-plain JavaScript that needs transforming (e.g. JS
 
 Vite serves source code over native ESM. This is essentially letting the browser take over part of the job of a bundler: Vite only needs to transform and serve source code on demand, as the browser requests it. Code behind conditional dynamic imports is only processed if actually used on the current screen.
 
-<img src="../mindGroup/financialControl/client/vite-project/public/Server.png" width="400">
+<img src="https://v2.vitejs.dev/assets/bundler.37740380.png" width="400">
 
 
 
