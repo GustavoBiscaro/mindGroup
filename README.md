@@ -88,7 +88,7 @@ Include popular icons in your React projects easly with react-icons
 ## React-Router-Dom
 Create fasts react router in youy application.
 
-## file JSX
+## File JSX
 React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
 
 Instead of artificially separating technologies by putting markup and logic in separate files, React separates concerns with loosely coupled units called “components” that contain both. We will come back to components in a further section, but if you’re not yet comfortable putting markup in JS, this talk might convince you otherwise.
