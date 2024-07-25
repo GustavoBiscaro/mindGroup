@@ -170,7 +170,11 @@ module.exports = class UserController {
 
         const { name, email, phone, password, confirmpassword } = req.body
 
-        let image = ''
+
+
+    if(req.file) {
+            user.image = req.file.filename
+        }
 
         // validations
         if (!name) {
@@ -218,31 +222,33 @@ module.exports = class UserController {
         
         try {
             // returns user updated data
-            const user = await User.findOne({ where: { id: userId } });
+            if (name) user.name = name;
+            if (email) user.email = email;
+            if (phone) user.phone = phone;
 
-            if (!user) {
-                res.status(404).json({
-                    message: 'User not found',
-                });
-                return;
+            if (password && confirmpassword) {
+                if (password !== confirmpassword) {
+                    return res.status(422).json({ message: "The passwords don't match" });
+                }
+
+                // Atualiza a senha
+                const salt = await bcrypt.genSalt(12);
+                user.password = await bcrypt.hash(password, salt);
             }
-            
-            user.set({
-                email: updatedEmail,
-                name: updatedName,
-            });
-            
+
             await user.save();
-            
+
             res.status(200).json({
                 message: 'User updated successfully',
-                user: user
+                user: {
+                    id: user.id,
+                    name: user.name,
+                    email: user.email,
+                    phone: user.phone,
+                }
             });
-
-        }catch(e) {
-            res.status(500).json({ message: e })
-            return
+        } catch (error) {
+            res.status(500).json({ message: error.message });
         }
-
     }
 };
