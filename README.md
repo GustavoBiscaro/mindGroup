@@ -49,11 +49,58 @@ Sequelize is a powerful Node.Js ORM (Object-Relational Mapping) library, created
 
 * <b>Salting: </b>Salting: To improve security, bcrypt incorporates a random number called a salt. This salt is unique to each password and is attached to it before hashing. The combined value (password + salt) is then passed to the hashing function.
 
+
+# CLIENT SIDE
+
+## VITE
+
+Before ES modules were available in browsers, developers had no native mechanism for authoring JavaScript in a modularized fashion. This is why we are all familiar with the concept of "bundling": using tools that crawl, process and concatenate our source modules into files that can run in the browser.
+
+Over time we have seen tools like webpack, Rollup and Parcel, which greatly improved the development experience for frontend developers.
+
+However, as we build more and more ambitious applications, the amount of JavaScript we are dealing with is also increasing dramatically. It is not uncommon for large scale projects to contain thousands of modules. We are starting to hit a performance bottleneck for JavaScript based tooling: it can often take an unreasonably long wait (sometimes up to minutes!) to spin up a dev server, and even with Hot Module Replacement (HMR), file edits can take a couple of seconds to be reflected in the browser. The slow feedback loop can greatly affect developers' productivity and happiness.
+
+Vite aims to address these issues by leveraging new advancements in the ecosystem: the availability of native ES modules in the browser, and the rise of JavaScript tools written in compile-to-native languages.
+
+Slow Server Start
+When cold-starting the dev server, a bundler-based build setup has to eagerly crawl and build your entire application before it can be served.
+
+Vite improves the dev server start time by first dividing the modules in an application into two categories: dependencies and source code.
+
+Dependencies are mostly plain JavaScript that do not change often during development. Some large dependencies (e.g. component libraries with hundreds of modules) are also quite expensive to process. Dependencies may also be shipped in various module formats (e.g. ESM or CommonJS).
+
+Vite pre-bundles dependencies using esbuild. esbuild is written in Go and pre-bundles dependencies 10-100x faster than JavaScript-based bundlers.
+
+Source code often contains non-plain JavaScript that needs transforming (e.g. JSX, CSS or Vue/Svelte components), and will be edited very often. Also, not all source code needs to be loaded at the same time (e.g. with route-based code-splitting).
+
+Vite serves source code over native ESM. This is essentially letting the browser take over part of the job of a bundler: Vite only needs to transform and serve source code on demand, as the browser requests it. Code behind conditional dynamic imports is only processed if actually used on the current screen.
+
+<img src="../mindGroup/financialControl/client/vite-project/public/Server.png" width="400">
+
+
+
+## Axios 
+Axios is a promise-based HTTP Client for node.js and the browser. It is isomorphic (= it can run in the browser and nodejs with the same codebase). On the server-side it uses the native node.js http module, while on the client (browser) it uses XMLHttpRequests. Looks like package fetch()
+
+## React-icons 
+Include popular icons in your React projects easly with react-icons
+
+## React-Router-Dom
+Create fasts react router in youy application.
+
+## file JSX
+React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
+
+Instead of artificially separating technologies by putting markup and logic in separate files, React separates concerns with loosely coupled units called “components” that contain both. We will come back to components in a further section, but if you’re not yet comfortable putting markup in JS, this talk might convince you otherwise.
+
+React doesn’t require using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.
+
 # HOW RUN THIS PROJECT?
 ## Client Side
-cd client
-npm start
+ cd vite-project<br>
+  npm install<br>
+  npm run dev
 
 ## Server Side
-cd server
+cd server<br>
 npm run runDev
