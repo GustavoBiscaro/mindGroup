@@ -16,6 +16,13 @@
     align-items: center;
 }
 
+.navbar_logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none; 
+
+}
+
 .navbar_logo img {
     width: 40px; /* Reduced logo size */
     margin-right: 0.5em; /* Reduced margin */
@@ -23,6 +30,7 @@
 
 .navbar_logo h2 {
     font-size: 1.2em; /* Reduced font size */
+    
 }
 
 .navbar ul {

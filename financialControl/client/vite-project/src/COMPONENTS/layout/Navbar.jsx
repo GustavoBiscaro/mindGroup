@@ -8,8 +8,9 @@ const Navbar = () => {
       return (
         <nav className={styles.navbar}>
             <div className={styles.navbar_logo}>
-              <Link to='/'><img src={Logo} alt="Financial Control" /></Link>
+              <Link to='/'><img src={Logo} alt="Financial Control" />
                 <h2>Financial Control</h2>
+                </Link>
             </div>
             <ul>
                 <li>
