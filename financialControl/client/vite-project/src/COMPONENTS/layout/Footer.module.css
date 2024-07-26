@@ -1,0 +1,13 @@
+:root {
+    --main-color: #cf0dbf99;
+    --text-color: rgba(49, 13, 207, 0.6);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border-top: rgba(76, 17, 212, 0.9)
+}
