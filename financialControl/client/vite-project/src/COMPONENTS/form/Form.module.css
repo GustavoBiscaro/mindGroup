@@ -1,0 +1,51 @@
+:root {
+    --main-color: rgba(126, 15, 143, 0.5);
+    --text-color: rgba(49, 13, 207, 0.6);
+    --form-container: #fff;
+}
+
+.form_container {
+  max-width: 300px;
+  margin: 0 auto;
+  background-color: var(--form-container);
+}
+.form_container input {
+ font-weight: 700;
+}
+
+.form_container input[type='submit'] {
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    background-color: var(--main-color);
+    color: #fff;
+    border: 2px groove var(--main-color);
+    min-height: 100px;
+    min-height: 2.5em;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bolder;
+
+}
+
+.form_container input[type='submit']:hover {
+    background-color: var(--text-color);
+}
+
+.form_container p {
+    margin-top: 1em;
+    color: #ccc;
+    font-weight: bolder;
+}
+
+.form_container p a {
+    color: var(--text-color);
+    font-weight: bold;
+}
+.form_container p a:hover {
+    color: var(--main-color);
+    font-weight: bolder;
+}

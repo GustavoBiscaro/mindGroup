@@ -1,5 +1,5 @@
 :root {
-    --main-color: #cf0dbf99;
+    --main-color: rgba(113, 15, 143, 0.5);
     --text-color: rgba(49, 13, 207, 0.6);
 }
 
@@ -8,12 +8,13 @@
     align-items: center;
     justify-content: center;
     background-color: var(--main-color);
-    color: var(--text-color);
+    color: var(--text);
     border-top: rgba(76, 17, 212, 0.9);
     position: fixed; /* Fixed position */
     bottom: 0; /* Stick to bottom */
     width: 100%; /* Full width */
     height: 50px; /* Fixed height (adjust as needed) */
+    border: 2px groove var(--main-color);
    
 }
 
