@@ -107,12 +107,14 @@ This therefore allows users to use websites without loading whole new pages from
 
   <li>
     <h3>Login</h3>
-    <img src="../mindGroup/financialControl/client/vite-project/src/ASSETS/screenshots/Login.png" width="100%">
-  </li>
+
+   ![Login](https://github.com/user-attachments/assets/23792acf-733e-4866-9fb1-114f75d48167) 
 
   <li>
       <h3>Register</h3>
-    <img src="../mindGroup/financialControl/client/vite-project/src/ASSETS/screenshots/Register.png" width="100%">
+      
+   [![Register](https://github.com/user-attachments/assets/ec057deb-0111-4638-a0fc-7df264c3b97d)](https://github.com/GustavoBiscaro/mindGroup/issues/2#issue-2434094132)
+
   </li>
 </ul>
 # HOW RUN THIS PROJECT?
