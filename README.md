@@ -117,6 +117,7 @@ This therefore allows users to use websites without loading whole new pages from
 
   </li>
 </ul>
+
 # HOW RUN THIS PROJECT?
 ## Client Side
  cd vite-project<br>
