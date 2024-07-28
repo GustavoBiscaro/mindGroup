@@ -1,17 +1,18 @@
-import api from '../UTILS/api';
-import { useState, useEffect } from 'react';
+import api from '../../src/UTILS/api';
 
-export default function useAuth() {
+// const  useHistory = useHistory();
 
-  async function register(user) {
+const useAuth = () => {
+  const register = async (user) => {
     try {
-      const data = await api.post('/users/register', user);
-      console.log(data);
-    } catch (error) {
-      console.error(error);
+      const response = await api.post('/users/register', user); // Use Axios post method
+      console.log(response.data); // Access data from the response
+    } catch (err) {
+      console.error(err);
     }
-
   }
 
-  return { register }
+  return { register };
 }
+
+export default useAuth;

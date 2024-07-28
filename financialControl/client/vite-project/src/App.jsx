@@ -15,6 +15,7 @@ import Home from './COMPONENTS/pages/Auth/Home';
 
 /* Context */
 import { UserProvider } from './CONTEXT/UserContext';
+import Message from './COMPONENTS/layout/Message';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Router>
             <UserProvider>
                 <Navbar />
+                <Message/>
                 <Container>
                     <Routes>
                         <Route path="/login" element={<Login />} />
