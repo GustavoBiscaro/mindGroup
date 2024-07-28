@@ -101,6 +101,20 @@ An SPA (Single-page application) is a web app implementation that loads only a s
 
 This therefore allows users to use websites without loading whole new pages from the server, which can result in performance gains and a more dynamic experience, with some tradeoff disadvantages such as SEO, more effort required to maintain state, implement navigation, and do meaningful performance monitoring.
 
+
+# SCREENSHOTS
+<ul>
+
+  <li>
+    <h3>Login</h3>
+    <img src="../mindGroup/financialControl/client/vite-project/src/ASSETS/screenshots/Login.png" width="100%">
+  </li>
+
+  <li>
+      <h3>Register</h3>
+    <img src="../mindGroup/financialControl/client/vite-project/src/ASSETS/screenshots/Register.png" width="100%">
+  </li>
+</ul>
 # HOW RUN THIS PROJECT?
 ## Client Side
  cd vite-project<br>
