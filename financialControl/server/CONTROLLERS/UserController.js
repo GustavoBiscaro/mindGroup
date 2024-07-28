@@ -52,7 +52,7 @@ module.exports = class UserController {
             res
                 .status(422)
                 .json({
-                    message: 'Please, use a different email address, this email already exists',
+                    message: 'Please, use a different email address, this email already exists!',
                 })
             return
         }
