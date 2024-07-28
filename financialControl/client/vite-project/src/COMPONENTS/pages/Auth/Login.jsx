@@ -7,9 +7,12 @@ import { Link } from 'react-router-dom';
 import { Context } from '../../../CONTEXT/UserContext';
 
 
+
 function Login() {
 
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState({});
+    const { login } = useContext(Context);
+ 
 
 
     function handleChange(event) {
@@ -18,8 +21,8 @@ function Login() {
 
     function handleSubmit(event) {
         event.preventDefault()
-
-        login(user)
+        login(user);
+    
     }
 
 
@@ -27,23 +30,22 @@ function Login() {
         <section className={styles.form_container}>
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
-         
 
 
                 <Input
                     text="E-mail"
                     type="email"
                     name="email"
-                    placeholder="Type your your email address"
+                    placeholder="Type your email address"
                     handleOnChange={handleChange}
                 />
-       
+
 
                 <Input
                     text="Password"
                     type="password"
                     name="password"
-                    placeholder="Type your your password"
+                    placeholder="Type your password"
                     handleOnChange={handleChange}
                 />
 

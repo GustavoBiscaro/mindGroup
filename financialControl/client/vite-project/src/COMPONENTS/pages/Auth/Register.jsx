@@ -41,7 +41,7 @@ function Register() {
                     text="E-mail"
                     type="email"
                     name="email"
-                    placeholder="Type your your email address"
+                    placeholder="Choose your email address"
                     handleOnChange={handleChange}
                 />
 
@@ -57,7 +57,7 @@ function Register() {
                     text="Password"
                     type="password"
                     name="password"
-                    placeholder="Type your your password"
+                    placeholder="Define your password"
                     handleOnChange={handleChange}
                 />
 
