@@ -26,7 +26,7 @@ function Register() {
 
     return (
         <section className={styles.form_container}>
-            <h1>Register User</h1>
+            <h1>Register</h1>
             <form onSubmit={handleSubmit}>
                 <Input
                     text="Name"
