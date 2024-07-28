@@ -64,11 +64,17 @@
     padding: 0.5em 0.8em;
     /* Reduced padding */
     border-radius: 5px;
+}
 
+.navbar li {
+   font-size: 1.1em;
+   font-weight: bolder;
 }
 
 .navbar li:hover {
     background-color: var(--main-color);
+    color: #fff;
+    font-weight: bolder;
 }
 
 .navbar li:hover>a {

@@ -16,6 +16,7 @@ import Home from './COMPONENTS/pages/Auth/Home';
 /* Context */
 import { UserProvider } from './CONTEXT/UserContext';
 import Message from './COMPONENTS/layout/Message';
+import Profile from './COMPONENTS/pages/User/Profile';
 
 
 function App() {
@@ -28,7 +29,10 @@ function App() {
                     <Routes>
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
+                        <Route path="/user/profile" element={<Profile />} />
                         <Route path="/" element={<Home />} />
+                     
+
                     </Routes>
                 </Container>
                 <Footer />
