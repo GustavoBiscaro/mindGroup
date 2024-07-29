@@ -27,7 +27,7 @@ const Navbar = () => {
 
                         <>
                            <li>
-                                <Link to="/user/profile">Perfil</Link>
+                                <Link to="/user/profile">Profile</Link>
                            </li>
                            <li onClick={logout}>Exit</li>
                         </>
