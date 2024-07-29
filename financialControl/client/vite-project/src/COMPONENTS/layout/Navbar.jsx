@@ -20,7 +20,7 @@ const Navbar = () => {
             </div>
             <ul>
                 <li>
-                    <Link to='/'>Financial Control</Link>
+                    <Link to='/'>Home Page</Link>
                 </li>
                 {
                     authenticated ? (

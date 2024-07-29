@@ -8,9 +8,14 @@ import Input from './../../form/Input';
 
 import useFlashMessage from './../../../HOOKS/useFlashMessage';
 
+
+
+
+
 const Profile = () => {
 
     const [user, setUser] = useState({})
+    const [preview, setPreview] = useState()
     const [token] = useState(localStorage.getItem('token') || '')
     const { setFlashMessage } = useFlashMessage()
 
@@ -27,6 +32,7 @@ const Profile = () => {
     }, [token])
 
     function onFileChange(e) {
+        setPreview(e.target.files[0])
         setUser({ ...user, [e.target.name]: e.target.files[0] })
     }
 
@@ -67,11 +73,15 @@ const Profile = () => {
 
     return (
 
-
         <section>
             <div className={styles.profile_header}>
                 <h1>Profile</h1>
-                <p>Preview Image</p>
+                {(user.image || preview) && (
+                    <img src={preview ? URL.createObjectURL(preview) : `${process.env.REACT_APP_API}/images/users/${user.image}`
+                    }
+                    alt={user.name}
+                    />
+                )}
             </div>
 
             <form onSubmit={handleSubmit} className={formStyles.form_container}>
