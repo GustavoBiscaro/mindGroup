@@ -48,14 +48,6 @@ module.exports = class UserController {
             }
         });
 
-        if (userExists) {
-            res
-                .status(422)
-                .json({
-                    message: 'Please, use a different email address, this email already exists!',
-                })
-            return
-        }
 
         // create a password
         const salt = await bcrypt.genSalt(12);
@@ -141,6 +133,7 @@ module.exports = class UserController {
         res.status(200).send(currentUser)
     }
 
+
     static async getUserById(req, res) {
 
         const id = req.params.id
@@ -164,54 +157,71 @@ module.exports = class UserController {
     static async editUser(req, res) {
         const id = req.params.id
 
-        // check if user exists
+        //check if user exists
         const token = getToken(req)
         const user = await getUserByToken(token)
 
         const { name, email, phone, password, confirmpassword } = req.body
 
+        let image = ''
 
-
-    if(req.file) {
-            user.image = req.file.filename
-        }
 
         // validations
         if (!name) {
             res.status(422).json({ message: 'Please, the name is required' })
             return
         }
+        user.name = name
+
+
         if (!email) {
             res.status(422).json({ message: 'Please, the email is required' })
             return
         }
 
-        // check if email has already taken
-        const userExists = await User.findOne({where: { email: email} });
+        // check if email email has already taken
+        const userExists = await User.findOne({ where: { email: email } });
 
         if (user.email !== email && userExists) {
             res.status(422).json({
-                message: 'Use another email, please!',
+                message: 'Please use another email.',
             })
             return
         }
 
         user.email = email
 
-
         if (!phone) {
             res.status(422).json({ message: 'Please, the phone is required' })
             return
         }
-
-        user.phone = phone 
+        if (!password) {
+            res.status(422).json({ message: 'Please, the password is required' })
+            return
+        }
+        if (!confirmpassword) {
+            res.status(422).json({ message: 'Please, the password confirmation is required' })
+            return
+        }
 
         if (password !== confirmpassword) {
             res.status(422).json({
                 message: "the password doesn't match"
             })
             return
-        } else if(password === confirmpassword && password != null) {
+        }
+
+
+        
+
+      
+
+        if (password !== confirmpassword) {
+            res.status(422).json({
+                message: "the password doesn't match"
+            })
+            return
+        } else if (password === confirmpassword && password != null) {
             // creating a password
             const salt = await bcrypt.genSalt(12);
             const passwordHash = await bcrypt.hash(password, salt);
@@ -219,7 +229,7 @@ module.exports = class UserController {
             user.password = passwordHash
 
         }
-        
+
         try {
             // returns user updated data
             if (name) user.name = name;

@@ -5,21 +5,17 @@ const sequelize = new Sequelize('financialcontrol', 'root', 'mySqlPass2023@', {
   dialect: 'mysql'
 });
 
-// ... definição dos seus modelos (User, outros modelos)
 
-async function main() {
+
+async function syncModels() {
   try {
-    await sequelize.authenticate();
-    console.log('Connected to MySQL!');
-
-    // Sincronizar todos os modelos, forçando a recriação das tabelas
-    await sequelize.sync({ force: true });
+    await sequelize.sync();
     console.log('All models were synchronized successfully.');
   } catch (error) {
-    console.error('Unable to connect to MySQL:', error);
+    console.error('An error occurred while synchronizing the models:', error);
   }
 }
 
-main().catch((err) => console.error(err));
+syncModels();
 
 module.exports = sequelize;

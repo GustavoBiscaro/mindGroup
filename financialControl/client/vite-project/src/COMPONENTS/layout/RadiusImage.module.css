@@ -1,0 +1,27 @@
+:root {
+    --main-color: rgba(113, 15, 143, 0.5);
+    --text-color: rgba(49, 13, 207, 0.6);
+}
+
+
+
+.radius_image {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-color: 100px solid red;
+}
+
+.radius_image.px75 {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}

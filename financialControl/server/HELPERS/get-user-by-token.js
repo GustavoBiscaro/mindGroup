@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 const User = require("../MODELS/User");
-const { getUserById } = require('../CONTROLLERS/UserController');
+
 
 // get user by jwt token
 
